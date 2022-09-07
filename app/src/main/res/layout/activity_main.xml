@@ -7,9 +7,10 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/text_hello_world2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="我喜欢Android开发"
+        android:text="@string/string_hello_world2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
