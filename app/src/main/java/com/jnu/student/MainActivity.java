@@ -3,6 +3,8 @@ package com.jnu.student;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,6 +30,27 @@ public class MainActivity extends AppCompatActivity {
         textViewHelloWorld.setText(R.string.string_hello_world2);
         textViewHelloWorld.setText(this.getResources().getText(R.string.string_hello_world2));
 
-        string strHelloWorld = textViewHelloWorld.getText().toString();
+        String strHelloWorld = textViewHelloWorld.getText().toString();
+
+        Button buttonChinese = findViewById(R.id.button_chinese);
+        Button buttonEnglish = findViewById(R.id.button_english);
+
+        //第一种方式注册事件监听,lambda
+        buttonChinese.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                textViewHelloWorld.setText(R.string.string_chinese);
+            }
+        });
+
+        //第二种方法，本质和第一种一样
+        buttonEnglish.setOnClickListener(new EnglishCliskListener());
+    }
+
+    private class EnglishCliskListener implements View.OnClickListener {
+        @Override
+        public void onClick(View view) {
+            textViewHelloWorld.setText(R.string.string_english);
+        }
     }
 }

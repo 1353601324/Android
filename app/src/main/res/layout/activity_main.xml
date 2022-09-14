@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--约束型布局-->
+<!--可以控制控件之间的相对距离-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,14 +8,41 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+<!--wrap_content: 有多少个字就是多长-->
+<!--match_parent: 长宽和父控件一样-->
+<!--layout_constraintBottom_toBottomOf/toTopOf/toEndOf/toStartOf = parent 效果是居中-->
     <TextView
         android:id="@+id/text_hello_world2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/string_hello_world2"
+        android:text="@string/string_hello_world"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_chinese"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/string_chinese"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_hello_world2"
+        app:layout_constraintVertical_bias="0.168" />
+
+    <Button
+        android:id="@+id/button_english"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/string_english"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.851"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_hello_world2"
+        app:layout_constraintVertical_bias="0.168" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
